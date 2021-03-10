@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Va</title>
+   <style>
+       #msg{
+           font-size:34px ;
+           font-weight:700 ;
+       }
+   </style>
+</head>
+<body>
+    <div>
+        Email: <input type="text" id="txtData" />
+        <button onclick="checkEmail()">Check Mail</button>
+    </div>
+    
+    <div id="msg"></div>
+    <script>
+        function checkEmail() {
+            let email = document.getElementById("txtData").value;         
+            let rex =  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
+
+            let ok = rex.test(email);
+            if (ok == true) {
+                document.getElementById("msg").innerHTML = "Email Address Correct";
+                document.getElementById("msg").style.color = "limegreen";
+            } else {
+                document.getElementById("msg").innerHTML = "Email Address Wrong";
+                document.getElementById("msg").style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
